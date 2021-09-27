@@ -16,20 +16,15 @@ public class App {
             System.out.print("What is the rate of return? ");
             String num = input.next();
             valid = false;
-            int len = num.length();
-            for(int i=0; i<len; i++)
-                if (num.charAt(i) < 48 || num.charAt(i) > 57) {
-                    valid = true;
-                    break;
-                }
+
+                valid = checker(num);
+
             if(!valid){
                 rate = strToDble(num);
                 if(rate==0){
                     valid = true;
+                    System.out.println("0 is not a viable rate of return.");
                 }
-            }
-            if(valid){
-                System.out.println("Sorry. That's not a valid input.");
             }
         }while(valid);
 
@@ -51,4 +46,18 @@ public class App {
         }
         return r;
     }
+    private static boolean checker(String num){
+        boolean valid = false;
+        int len = num.length();
+        for(int i=0; i<len; i++)
+            if (num.charAt(i) < 48 || num.charAt(i) > 57) {
+                valid = true;
+                break;
+            }
+        if(valid){
+            System.out.println("Sorry. That's not a valid input.");
+        }
+        return valid;
+    }
+
 }
