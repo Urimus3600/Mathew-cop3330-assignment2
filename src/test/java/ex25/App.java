@@ -1,3 +1,8 @@
+/**
+ * UCF COP3330 Fall 2021 Assignment 2 Solution
+ * Copyright 2021 Austin Mathew
+ */
+
 package ex25;
 
 import java.util.Scanner;
@@ -36,11 +41,11 @@ public class App {
         }
     }
     public static void main(String[] args){
-        String password = "1234";
+        String password;
         Scanner input = new Scanner(System.in);
 
         do{
-            password = input.nextLine();
+            password = input.next();
             int strength;
             if(password.length()>0) {
                 strength = passwordValidator(password);
@@ -57,7 +62,7 @@ public class App {
                 } else if (strength == 1) {
                     Strength = "very weak ";
                 }
-                System.out.println("The password \'" + password + "\' is a " + Strength + "password.\n");
+                System.out.println("The password '" + password + "' is a " + Strength + "password.\n");
             }
         }while(password.length()!=0);
     }

@@ -1,3 +1,8 @@
+/**
+ * UCF COP3330 Fall 2021 Assignment 2 Solution
+ * Copyright 2021 Austin Mathew
+ */
+
 package ex24;
 
 import java.util.Locale;
@@ -24,31 +29,26 @@ public class App {
                 }
             }
         }
-        if(counter == x){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return counter == x;
     }
 
     public static void main(String[] args){
 
         Scanner input = new Scanner(System.in);
 
-        System.out.printf("Enter two strings and I'll tell you if they're anagrams:\n");
-        System.out.printf("Enter the first string: ");
+        System.out.print("Enter two strings and I'll tell you if they're anagrams:\n");
+        System.out.print("Enter the first string: ");
         String First = input.next();
         String first = First.toLowerCase(Locale.ROOT);
-        System.out.printf("Enter the first string: ");
+        System.out.print("Enter the second string: ");
         String Second = input.next();
         String second = Second.toLowerCase(Locale.ROOT);
 
         if(isAnagram(first, second)){
-            System.out.printf("\""+ First + "\" and \"" + Second + "\" are anagrams.");
+            System.out.print("\""+ First + "\" and \"" + Second + "\" are anagrams.");
         }
         else{
-            System.out.printf("\""+ First + "\" and \"" + Second + "\" are not anagrams.");
+            System.out.print("\""+ First + "\" and \"" + Second + "\" are not anagrams.");
         }
 
     }
