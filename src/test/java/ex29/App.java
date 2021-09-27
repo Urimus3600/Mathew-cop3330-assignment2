@@ -40,7 +40,7 @@ public class App {
 
     private static double strToDble(String num) {
         int r = 0;
-        for(int i=num.length()-1; i>-1; i--){
+        for(int i=0; i<num.length(); i++){
             r*=10;
             r+= num.charAt(i)-48;
         }
