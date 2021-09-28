@@ -1,3 +1,8 @@
+/**
+ * UCF COP3330 Fall 2021 Assignment 2 Solution
+ * Copyright 2021 Austin Mathew
+ */
+
 package ex34;
 
 import java.util.Scanner;
@@ -11,18 +16,18 @@ public class App {
         printNames(nameNum, names);
         System.out.print("\nEnter an employee name to remove: ");
         String name = input.nextLine();
-        System.out.println("");
+        System.out.println();
         nameNum = removeName(nameNum, names, name);
         printNames(nameNum, names);
     }
 
     private static int removeName(int nameNum, String[] names, String name) {
         for(int i=0; i<nameNum; i++){
-            if(names[i].equals(name)){
-                names[i]="";
+            if(names[i].equals(name)) {
+                names[i] = "";
                 nameNum--;
-                for(int j=i; j<nameNum; j++){
-                    names[j] = names[j+1];
+                for (int j = i; j < nameNum; j++) {
+                    names[j] = names[j + 1];
                 }
             }
         }
